@@ -37,11 +37,9 @@
         android:padding="30dp"
         android:text="@string/share"
         android:textColor="@color/white"
-        android:background="@color/shareButtonColor"
-        tools:layout_editor_absoluteX="24dp"
-        tools:layout_editor_absoluteY="646dp"
+        android:background="#FF9800"
         android:onClick="shareMeme"
-        tools:ignore="UsingOnClickInXml" />
+        />
 
     <Button
         android:id="@+id/nextButton"
@@ -53,11 +51,9 @@
         app:layout_constraintLeft_toRightOf="@id/guideline2"
         android:text="@string/next"
         android:textColor="@color/white"
-        android:background="@color/nextButtonColor"
-        tools:layout_editor_absoluteX="271dp"
-        tools:layout_editor_absoluteY="662dp"
+        android:background="#E63D3D"
         android:onClick="nextMeme"
-        tools:ignore="UsingOnClickInXml" />
+         />
 
     <androidx.constraintlayout.widget.Guideline
         android:id="@+id/guideline2"
