@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.core.app.ShareCompat
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.JsonObjectRequest
@@ -42,11 +43,11 @@ class MainActivity : AppCompatActivity() {
         queue.add(jsonObjectRequest)
     }
     fun shareMeme(view: View) {
-        val intent = Intent(Intent.ACTION_SEND)
-        intent.type = "text/plain"
-        intent.putExtra(Intent.EXTRA_TEXT, "Hey check out this meme $curImage")
-        val chooser = Intent.createChooser(intent, "Share via")
-        startActivity(chooser)
+        ShareCompat.IntentBuilder.from(this)
+            .setType("text/plain")
+            .setChooserTitle("Share via")
+            .setText("Hey check this meme $curImage")
+            .startChooser()
     }
     fun nextMeme(view: View) {
         loadMeme()
